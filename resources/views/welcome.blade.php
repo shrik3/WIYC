@@ -21,33 +21,22 @@
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
-            height: 100vh;
-            margin: 0;
         }
 
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .position-ref {
-            position: relative;
-        }
 
         .top-right {
             position: absolute;
-            right: 10px;
+            right: 5%;
             top: 18px;
+        }
+        
+        .links a:hover {
+            color: red;
         }
 
         .content {
             text-align: center;
+            padding-bottom: 50px;
         }
 
         .title {
@@ -60,9 +49,8 @@
         }
 
         .top_bar {
-            height: 20px;
+            height: 30px;
             width: auto;
-            background-color: red;
         }
 
         .links > a {
@@ -82,8 +70,7 @@
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-    <div c1ass="top_bar"></div>
+
     @if (Route::has('login'))
     <div class='top_bar'>
         <div class="top-right links">
@@ -99,7 +86,7 @@
 
     <div class="content">
         <div class="banner">
-            <img src="/images/11.jpg"
+            <img width="90%" src="/images/11.jpg"
             />
         </div>
         <div class="title m-b-md">
@@ -113,6 +100,6 @@
             <a href="/home">MY</a>
         </div>
     </div>
-</div>
+
 </body>
 </html>
