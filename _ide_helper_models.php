@@ -12,8 +12,38 @@ namespace App{
 /**
  * App\book
  *
+ * @property string $name
+ * @property string $ISBN
+ * @property string $info
+ * @property int $base_price
+ * @property int $sale_price
+ * @property string $publish_time
+ * @property int $amount
+ * @property string $brief
+ * @property string $img
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereAmount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereBasePrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereBrief($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereISBN($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereImg($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereInfo($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book wherePublishTime($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereSalePrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\book whereUpdatedAt($value)
  */
 	class book extends \Eloquent {}
+}
+
+namespace App{
+/**
+ * App\Review
+ *
+ */
+	class Review extends \Eloquent {}
 }
 
 namespace App{

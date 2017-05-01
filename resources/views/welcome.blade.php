@@ -29,7 +29,7 @@
             right: 5%;
             top: 18px;
         }
-        
+
         .links a:hover {
             color: red;
         }
@@ -57,7 +57,7 @@
             color: #636b6f;
 
             padding: 0 25px;
-            font-size: 12px;
+            font-size: 17px;
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
