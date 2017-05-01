@@ -39,7 +39,7 @@
                         <br>
                         <div class="row">
             				<div class="col-md-12">
-            					<input type="file" name="image"  />
+            					<input type="file" name="image" required="required"  />
             				</div>
                         </div>
                         <br>

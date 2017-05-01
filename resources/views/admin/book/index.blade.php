@@ -3,13 +3,8 @@
 @section('content')
 
 
-<style>
+<link rel="stylesheet" type="text/css" href="/css/go.css">
 
-.book{
-
-}
-
-</style>
 
 
 <div class="container">
@@ -28,16 +23,16 @@
 
                     @foreach ($books as $book)
                         <hr>
-                        <div class="book" style="padding:10px;height:auto; overflow:hidden;">
-                            <div class="bookimg" style="float:left; margin:10px; padding:10px; width:200px;">
+
+                        <div class="book" >
+                            <div class="bookimg" >
                                 <img src="{{url('/images/'.$book->img)}}"
                                     width="130px";
 
-                                    style="margin-top:15px"
                                 >
                             </div>
 
-                            <div class="info" style="margin-left:210px;padding:10px; background-color:red;">
+                            <div class="info" >
                                 <h5 style="line-height:150%">
                                     Name : {{ $book->name }}
                                     <br>
