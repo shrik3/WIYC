@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Books</title>
+	<title>Details</title>
 
 	<!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -34,38 +34,70 @@
 <div>
 	<form class="search" action="">
 	<input type="search" placeholder="Find your joy here ... " required>
-	<button type="submit">Search</button>
+	<button type="submit">Search</bBookutton>
 </form>
 </div>
 
 <div id="content-body">
 	<!-- 侧栏 -->
 	<div id="sidebar">
-		<h1>分类</h1>
-		<ul class="links">
-		  <li><a href=""><p>分类1</p></a></li>
-		  <li><a href=""><p>分类2</p></a></li>
-			<li><a href=""><p>分类3</p></a></li>
-		  <li><a href=""><p>分类4</p></a></li>
-		</ul>
-	</div>
-
-	<div id="books-body">
-
-			@foreach ($books as $book)
-			<div class="part1">
+			<div class="part2">
 				<a href="{{url('book/'.$book->sISBN)}}">
 					<img height="150" width="150px" src="{{url('/images/'.$book->img)}}"/>
 				</a>
 				<div class="info">
 					<p>Name : {{$book->name}}</p>
 					<p>Info : {{$book->info}}</p>
-					<p>price : {{$book->sale_price}}</p>
-
-
+					<br>
+					<p>price : <em class="price">{{$book->sale_price}}</em></p>
+					<br>
+					<!-- <a href="/book" >
+						<button type="button" class="mbutton"  >BUY</button>
+					</a> -->
 				</div>
+
+				<a href="/my/order/new/{{$book->sISBN}}" >
+					<button type="button" class="mbutton"  >BUY</button>
+				</a>
 			</div>
-			@endforeach
+
+	</div>
+
+	<div id="books-body">
+
+		<div class='info2'>
+			<h3>简介</h3>
+			<hr>
+			{{$book->brief}}
+
+		 </div>
+
+	</div>
+	<div id="books-body">
+
+			<h3>读者评论</h3>
+            <a  href="{{ url('admin/comment/create') }}" class="btn btn-lg btn-primary" style="background-color:#ffffff; color:black">写评论</a>
+			<br>
+			<br>
+
+			@foreach ($comments as $comment)
+
+				 <div class="one" style="border-top: solid 2px #efefef; padding: 5px 20px;">
+					 <div class="nickname" data="{{ $comment->nickname }}">
+
+						 <em style="font-weight:bold; font-size:150%">{{$comment->title}} </em>
+						 by {{ $comment->user_name }} @ {{$comment->created_at}}
+					 </div>
+					 <div class="content" style="text-align:left; ">
+						 <p style="padding: 5px;font-weight:normal;font-size:120%">
+							 {{ $comment->content }}
+						 </p>
+					 </div>
+
+				 </div>
+
+			 @endforeach
+
 
 	</div>
 

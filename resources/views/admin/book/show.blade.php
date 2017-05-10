@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,6 @@
 	<!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-	  <link rel="stylesheet" type="text/css" href="/css/app.css">
 	  <link rel="stylesheet" type="text/css" href="/css/base.css">
        <!-- Styles -->
 
@@ -41,31 +41,13 @@
 <div id="content-body">
 	<!-- 侧栏 -->
 	<div id="sidebar">
-		<h1>分类</h1>
-		<ul class="links">
-		  <li><a href=""><p>分类1</p></a></li>
-		  <li><a href=""><p>分类2</p></a></li>
-			<li><a href=""><p>分类3</p></a></li>
-		  <li><a href=""><p>分类4</p></a></li>
-		</ul>
+		<div class="part1">
+		</div>
 	</div>
+
 
 	<div id="books-body">
 
-			@foreach ($books as $book)
-			<div class="part1">
-				<a href="{{url('book/'.$book->sISBN)}}">
-					<img height="150" width="150px" src="{{url('/images/'.$book->img)}}"/>
-				</a>
-				<div class="info">
-					<p>Name : {{$book->name}}</p>
-					<p>Info : {{$book->info}}</p>
-					<p>price : {{$book->sale_price}}</p>
-
-
-				</div>
-			</div>
-			@endforeach
 
 	</div>
 

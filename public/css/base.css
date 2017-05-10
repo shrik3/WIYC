@@ -117,6 +117,8 @@ html, body {
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
+
+    min-width: 150px;
 }
 #sidebar h1 {
   padding-bottom: 15px;
@@ -147,7 +149,7 @@ html, body {
   /*margin-left: 40%;*/
   overflow:hidden;
   display:inline;
-
+  min-width: 550px;
   border-radius: 6px;
   box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
     background-color: #FFFFFF;
@@ -175,6 +177,7 @@ box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
 .part1:hover{
   background-color: #ccc;
     border-radius: 10px;
+
 }
 
 .part1 img {
@@ -182,12 +185,77 @@ box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
   border-radius: 6px;
 }
 
+
+
+
+.part2{
+width: 90%;
+height: auto;
+background: #a1f7f7;
+float: left;
+margin-left: 5% ;
+
+border-radius: 6px;
+box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.part2:hover{
+  background-color: #ccc;
+    border-radius: 10px;
+
+}
+
+.part2 img {
+  width: 80%;
+  height:auto;
+  margin: 10px 50px;
+  border-radius: 6px;
+  margin-left: 10%;
+}
+
+
 .info{
-  color: #252422;;
+  color: #252422;
   font-family: 'Raleway', sans-serif;
   font-size: 70%;
   font-weight: bold;
   margin:5px;
   padding : 3px;
-  height: 70px;
+  height: auto;
+  /*background-color: red;*/
+}
+
+.info em.price{
+    font-size: 200%;
+    color: red;
+}
+
+.info2 {
+     color: #252422;
+  font-family: 'Raleway', sans-serif;
+  font-size: 150%;
+  font-weight: normal;
+  margin:5px;
+  padding : 3px;
+  height: auto;
+
+}
+
+.mbutton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: black;
+    height: 30px;
+    line-height: 30px;
+    width:80%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10%;
+    margin-bottom: 5px;
 }

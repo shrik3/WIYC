@@ -25,7 +25,7 @@
                         {!! csrf_field() !!}
                         <input type="text" name="name" class="form-control" required="required" placeholder="请输入名称 (无需书名号)">
                         <br>
-                        <input type="text" name="ISBN" class="form-control" required="required" placeholder="请输入ISBN">
+                        <input type="text" name="sISBN" class="form-control" required="required" placeholder="请输入ISBN">
                         <br>
                         <input type="text" name="info" class="form-control" required="required" placeholder="请输入出版信息">
                         <br>

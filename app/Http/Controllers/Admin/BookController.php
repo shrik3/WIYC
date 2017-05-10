@@ -23,7 +23,7 @@ class BookController extends Controller {
     public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'ISBN' => 'required|unique:books|max:255',
+            'sISBN' => 'required|unique:books|max:255',
             'info' => 'required',
             'amount' => 'required|integer',
             'base_price' => 'required|integer',
@@ -34,7 +34,7 @@ class BookController extends Controller {
 
         $book = new \App\Book;
         $book->name = $request->get('name');
-        $book->ISBN = $request->get('ISBN');
+        $book->sISBN = $request->get('sISBN');
         $book->info = $request->get('info');
         $book->amount = $request->get('amount');
         $book->base_price = $request->get('base_price');
