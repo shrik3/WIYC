@@ -23,7 +23,9 @@
     width:130px;
 }
 
-.info{
+.order_info{
+    width:60%;
+    margin-right: 0px;
     margin-left:210px;
     margin-top:10px;
     padding:10px;

@@ -5,14 +5,24 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use \App\Traits\StatusTools;
+
 
 class OrderController extends Controller
 {
+    use StatusTools;
 
     public function index(){
         $name = Auth::user()->name;
         $results = \App\Order::where('user_name',$name)->get();
-        return $results;
+        foreach($results as $order){
+            $book = \App\Book::find($order->sISBN);
+            $order->img = $book->img;
+            $order->bookname = $book->name;
+            $order->bookinfo = $book->info;
+            $order->status = $this->get_order_status($order->status);
+        }
+        return view('order/index')->withOrders($results);
     }
 
     //

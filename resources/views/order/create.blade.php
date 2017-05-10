@@ -1,93 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Books</title>
+@extends('layouts.app')
 
-	<!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('content')
 
-	  <link rel="stylesheet" type="text/css" href="/css/app.css">
-	  <link rel="stylesheet" type="text/css" href="/css/base.css">
-       <!-- Styles -->
 
-</head>
-<body>
-	@if (Route::has('login'))
-    <div class='top_bar'>
-		<div class='top-middle'>
-			<h4 align='middle'>Your Book Store</h4>
+<style>
 
-		</div>
-        <div class="top-right links">
-             @if (Auth::check())
-                <a href="{{ url('/home') }}">Home</a>
-             @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register') }}">Register</a>
-			@endif
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Logging a new book </div>
+                <div class="panel-body">
+
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>新增失败</strong> 输入不符合要求<br><br>
+                            {!! implode('<br>', $errors->all()) !!}
+                        </div>
+                    @endif
+
+                    <form action="{{ url('admin/book') }}" method="POST" enctype="multipart/form-data">
+                        {!! csrf_field() !!}
+                        <input type="text" name="name" class="form-control" required="required" placeholder="请输入名称 (无需书名号)">
+                        <br>
+                        <input type="text" name="ISBN" class="form-control" required="required" placeholder="请输入ISBN">
+                        <br>
+                        <input type="text" name="info" class="form-control" required="required" placeholder="请输入出版信息">
+                        <br>
+                        <input type="text" name="amount" class="form-control" required="required" placeholder="请输入数量">
+                        <br>
+                        <input type="text" name="base_price" class="form-control" required="required" placeholder="基础价格">
+                        <br>
+                        <input type="text" name="sale_price" class="form-control" required="required" placeholder="售价">
+                        <br>
+                        <textarea name="brief" rows="10" class="form-control" required="required" placeholder="请输入简介"></textarea>
+                        <br>
+                        <div class="row">
+            				<div class="col-md-12">
+            					<input type="file" name="image" required="required"  />
+            				</div>
+                        </div>
+                        <br>
+                        <button class="btn btn-lg btn-info">New entry</button>
+                    </form>
+
+                </div>
+            </div>
         </div>
     </div>
-	@endif
-
-
-<div id="content-body">
-	<!-- 侧栏 -->
-	<div id="sidebar">
-			<div class="part2">
-				<a href="{{url('book/'.$book->sISBN)}}">
-					<img height="150" width="150px" src="{{url('/images/'.$book->img)}}"/>
-				</a>
-				<div class="info">
-					<p>Name : {{$book->name}}</p>
-					<p>Info : {{$book->info}}</p>
-					<br>
-					<p>price : <em class="price">{{$book->sale_price}}</em></p>
-					<br>
-					<!-- <a href="/book" >
-						<button type="button" class="mbutton"  >BUY</button>
-					</a> -->
-				</div>
-
-			</div>
-
-	</div>
-
-	<div id="books-body">
-		<h3 > Create a new order </h3>
-		<hr>
-
-		@if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>failed</strong> <br><br>
-                    {!! implode('<br>', $errors->all()) !!}
-            </div>
-        @endif
-
-        <form action="{{ url('my/order/new/'.$book->sISBN) }}" method="POST" enctype="multipart/form-data">
-        	{!! csrf_field() !!}
-                <input type="text" name="name" class="form-control" style="font-weight:normal" required="required" placeholder="真实姓名">
-                    <br>
-                <input type="text" name="tel" class="form-control" style="font-weight:normal"  required="required" placeholder="联系电话">
-                    <br>
-                <input type="text" name="address" class="form-control" style="font-weight:normal"  required="required" placeholder="邮寄地址">
-                    <br>
-                <input type="text" name="amount" class="form-control" style="font-weight:normal"  required="required" placeholder="输入订购数量">
-                    <br>
-                <input type="text" name="note" class="form-control" style="font-weight:normal"  placeholder="备注（特殊要求等）">
-                    <br>
-
-
-				<button class="btn btn-lg btn-info">CONFIRM</button>
-        </form>
-
-
-
-	</div>
-
-
 </div>
-
-
-</body>
-</html>
+@endsection
