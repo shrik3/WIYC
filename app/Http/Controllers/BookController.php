@@ -14,6 +14,6 @@ class BookController extends Controller
 
     public function show($ISBN){
         // $book = \App\Book::with('comments')->find($ISBN);
-        return  view('book/show')->withBook(\App\Book::find($ISBN))->withComments(\App\Comment::where('sISBN',$ISBN)->get());
+        return  view('book/show')->withBook(\App\Book::find($ISBN))->withComments(\App\Comment::where('sISBN',$ISBN)->orderBy('id','DESC')->get());
     }
 }

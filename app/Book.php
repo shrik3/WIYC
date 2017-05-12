@@ -8,7 +8,6 @@ class book extends Model
 {
     //
     protected $primaryKey = 'sISBN'; // or null
-
     public $incrementing = false;
 
     public function comments(){

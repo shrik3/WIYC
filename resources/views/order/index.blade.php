@@ -103,7 +103,7 @@
 						@endif
 
 
-							<a  href="{{ url('my/order/pay/'.$order->id) }}" class="btn btn-lg btn-primary"
+							<a  href="{{ url('comment/new/'.$order->sISBN) }}" class="btn btn-lg btn-primary"
 							style="background-color:#fff;color:black;margin-left:0%;margin-top:0;padding:5px; ">
 								-写评论-
 							</a>

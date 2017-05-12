@@ -76,9 +76,19 @@
 	<div id="books-body">
 
 			<h3>读者评论</h3>
-            <a  href="{{ url('comment/new/'.$book->sISBN) }}" class="btn btn-lg btn-primary" style="background-color:#ffffff; color:black">写评论</a>
 			<br>
 			<br>
+
+			<form action="{{ url('comment/new/'.$book->sISBN) }}" method="POST" enctype="multipart/form-data">
+				{!! csrf_field() !!}
+				<input type="text" name="title" class="form-control" required="required" placeholder="title">
+				<br>
+				<textarea name="content" id="newFormContent" class="form-control" rows="10" required="required"></textarea>
+				<br>
+				<button class="btn btn-lg btn-info">SUBMIT</button>
+				<br>
+				<br>
+			</form>
 
 			@foreach ($comments as $comment)
 

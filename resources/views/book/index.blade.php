@@ -43,10 +43,10 @@
 	<div id="sidebar">
 		<h1>分类</h1>
 		<ul class="links">
-		  <li><a href=""><p>分类1</p></a></li>
-		  <li><a href=""><p>分类2</p></a></li>
-			<li><a href=""><p>分类3</p></a></li>
-		  <li><a href=""><p>分类4</p></a></li>
+		  <li><a href=""><p>文学</p></a></li>
+		  <li><a href=""><p>科幻</p></a></li>
+			<li><a href=""><p>古典</p></a></li>
+		  <li><a href=""><p>某分类</p></a></li>
 		</ul>
 	</div>
 

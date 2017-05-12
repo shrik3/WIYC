@@ -14,7 +14,7 @@ class OrderController extends Controller
 
     public function index(){
         $name = Auth::user()->name;
-        $results = \App\Order::where('user_name',$name)->get();
+        $results = \App\Order::where('user_name',$name)->orderBy('id','DESC')->get();
         foreach($results as $order){
             $book = \App\Book::find($order->sISBN);
             $order->img = $book->img;
@@ -30,6 +30,18 @@ class OrderController extends Controller
         $name = Auth::user()->name;
         // return 'creating a new order for '.$name.' book isbn is '.$ISBN;
         return view('order/create')->withBook(\App\Book::find($ISBN));
+    }
+
+    public function confirm($id){
+        $order = \App\Order::find($id);
+        if ($order->status == 2){
+            $order->status = 3;
+        }
+        if($order->save()){
+            return redirect('my/order/');
+        } else {
+            return redirect()->back()->withInput()->withErrors('保存失败！');
+        }
     }
 
     public function store_order($ISBN , Request $request){

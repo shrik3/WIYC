@@ -27,14 +27,22 @@ Route::resource('/review','ReviewController');
 
 Route::group(['middleware'=>'auth','namespace'=>'Admin','prefix'=>'admin'],function(){
     Route::Resource('/book','BookController');
-    Route::get('order/list','OrderController@index');
+    Route::get('order/','OrderController@index');
+    Route::get('mark/paid/{id}','OrderController@mark_as_paid');
+    Route::get('mark/pended/{id}','OrderController@mark_as_pended');
+    Route::get('order/delete/{id}','OrderController@delete');
 });
 
 Route::group(['middleware'=>'auth','namespace'=>'User','prefix'=>'my'],function(){
     Route::get('order','OrderController@index');
     Route::get('order/new/{id}','OrderController@new_order');
     Route::post('order/new/{id}','OrderController@store_order');
-
+    Route::get('order/confirm/{id}','OrderController@confirm');
     Route::get('/','ProfileController@index');
 
+});
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('comment/new/{id}','CommentController@new');
+    Route::post('comment/new/{id}','CommentController@store');
 });
