@@ -11,9 +11,13 @@ class BookController extends Controller
     public function index(){
         $books = \App\Book::all();
         foreach($books as $book){
+            $book['base_price'] = 'x';
             $book['img']=url('images'.$book['img']);
         }
-        return $books;
+        $response = [];
+        $response['totalCount'] = count($books);
+        $response['list'] = $books;
+        return $response;
 
     }
 }
