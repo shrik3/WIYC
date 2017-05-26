@@ -12,11 +12,12 @@ class BookController extends Controller
         $books = \App\Book::all();
         foreach($books as $book){
             $book['base_price'] = 'x';
-            $book['img']=url('images'.$book['img']);
+            $book['img']=url('images/'.$book['img']);
         }
         $response = [];
         $response['totalCount'] = count($books);
         $response['list'] = $books;
+        return str_replace("\\/" , "/" , json_encode($response));
         return $response;
 
     }
