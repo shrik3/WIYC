@@ -8,6 +8,11 @@ html, body {
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
 }
+
+.theme_bgc {
+  background-color: #ebe8db;
+}
+
 .top_bar {
     height: 55px;
     width: auto;
@@ -74,6 +79,10 @@ html, body {
 .search input:focus {
   outline: 0;
   background:transparent;
+}
+
+.use_shadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .search button {

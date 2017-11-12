@@ -9,9 +9,12 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="/css/semantic.min.css">
 
     <!-- Styles -->
     <style>
+    /* <script src="/js/semantic.min.js"> </script> */
         * {
             margin: 0;
             padding: 0;
@@ -47,10 +50,15 @@
             padding: 20px;
             margin: 15px;
         }
+        
+        .image_container {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 
         .top_bar {
             height: 30px;
             width: auto;
+         
         }
 
         .links > a {
@@ -86,18 +94,19 @@
 
     <div class="content">
         <div class="banner">
-            <img width="90%" src="/images/11.jpg"
-            />
+            <div class="image_container">
+            <img width="100%" src="/images/11.jpg"/>
+            </div>
         </div>
         <div class="title m-b-md">
-            The answer is 42
+            Who is your owner ?
         </div>
 
         <div class="links">
-            <a href="/book">Book List</a>
-            <a href="/recommend">Recommend</a>
-            <a href="/review">Reviews</a>
-            <a href="/home">MY</a>
+            <a href="/adoption">领养</a>
+            <a href="/recommend">送养</a>
+            <a href="/review">闲逛</a>
+            <a href="/home">我的</a>
         </div>
     </div>
 
