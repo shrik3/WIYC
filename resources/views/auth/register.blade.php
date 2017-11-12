@@ -125,10 +125,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Phone number</label>
+                            <label for="tel" class="col-md-4 control-label">Phone number</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="tel" type="tel" class="form-control" name="tel" value="{{ old('tel') }}" required>
 
                                 @if ($errors->has('tel'))
                                     <span class="help-block">

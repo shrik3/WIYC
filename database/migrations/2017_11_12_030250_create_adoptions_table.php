@@ -13,6 +13,20 @@ class CreateAdoptionsTable extends Migration
      */
     public function up()
     {
+        Schema::create('adoptions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('user_id');
+            $table->string('title');
+            $table->string('category');
+            $table->string('detail');
+            $table->string('location');
+            $table->string('contact');
+            $table->string('requirement');
+            $table->string('vaccination');
+            // i removed the 'birthday ' here , 'cause I think it's way woo complicated for users
+
+            $table->timestamps();
+        });
         //
     }
 

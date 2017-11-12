@@ -26,6 +26,7 @@ Route::get('/book','BookController@index');
 // Route::get('/test','TestController@test');
 // Route::resource('/review','ReviewController');
 Route::get('adoption','AdoptionController@index');
+Route::get('adoption/create','AdoptionController@create');
 Route::get('adoption/{id}','AdoptionController@show');
 
 
@@ -48,6 +49,7 @@ Route::group(['middleware'=>'auth','namespace'=>'User','prefix'=>'my'],function(
 });
 
 Route::group(['middleware'=>'auth'],function(){
+    Route::get('/giveaway','AdoptionController@create');
     Route::get('comment/new/{id}','CommentController@new');
     Route::post('comment/new/{id}','CommentController@store');
 });

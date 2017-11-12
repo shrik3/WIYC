@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default" style="min-width: 750px">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Waiting for you . </div>
                     <br>
 
                     <div class="ui items" style="padding: 10px">
