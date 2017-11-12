@@ -10,7 +10,11 @@ html, body {
 }
 
 .theme_bgc {
-  background-color: #ebe8db;
+    background-color: #ebe8db;
+}
+
+.theme_bg {
+    background: #ebe8db;
 }
 
 .top_bar {
@@ -81,8 +85,17 @@ html, body {
   background:transparent;
 }
 
+.description p{
+
+}
 .use_shadow{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item{
+    /*background: #fffef0 !important;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    padding: 5px !important;
 }
 
 .search button {

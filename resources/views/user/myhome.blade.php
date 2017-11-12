@@ -18,41 +18,89 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
+        window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};
     </script>
 
-    <script src="/js/jquery.min.js"> </script>
-    <script src="/js/semantic.min.js"> </script>
-    <script src="/js/sms_form_test.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/semantic.min.js"></script>
     <script src="/js/my.js"></script>
-    
+
 
 </head>
 
 <body>
- 
+
 <div class="ui sidebar inverted vertical menu">
     <a class="item">
-      1
+        1
     </a>
     <a class="item">
-      2
+        2
     </a>
     <a class="item">
-    3
+        3
     </a>
 </div>
 
-<div class="pusher">
+<div class="pusher theme_bgc" style="background:#ebe8db">
     <div class="ui button" onclick="toggle()">...</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default" style="min-width: 750px">
+                    <div class="panel-heading">Dashboard</div>
+                    <br>
 
-</div>
+                    <div class="ui items" style="padding: 10px">
+                        <div class="item ">
+                            <div class="image">
+                                <img src="/images/cat1.jpg">
+                            </div>
+                            <div class="content">
+                                <a class="header">Find him a home ! =w=</a>
+                                <div class="meta">
+                                    <span>Description</span>
+                                </div>
+                                <div class="description">
+                                    <p>category : who knows </p>
+                                    <p>age : 2 month</p>
+                                    <p>location : 西安子科技大学（南校区）</p>
+                                </div>
+                                <div class="extra">
+                                    Additional Details
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item ">
+                            <div class="image">
+                                <img src="/images/cat2.jpg">
+                            </div>
+                            <div class="content">
+                                <a class="header"> 珍爱生命，远离毒品</a>
+                                <div class="meta">
+                                    <span>Description</span>
+                                </div>
+                                <div class="description">
+                                    <p>category : 喵喵喵 </p>
+                                    <p>age : 3 months</p>
+                                    <p>location : 西安子科技大学（北校区）</p>
+                                </div>
+                                <div class="extra">
+                                    Additional Details
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-    
     <!-- Scripts -->
 
 </body>
