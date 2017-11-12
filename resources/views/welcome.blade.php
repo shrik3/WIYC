@@ -98,15 +98,26 @@
             <img width="100%" src="/images/11.jpg"/>
             </div>
         </div>
+        <br>
         <div class="title m-b-md">
             Who is your owner ?
         </div>
-
+        <br>
         <div class="links">
+            <div class="ui red basic button" style="  margin-right:10px;margin-left: 10px">
             <a href="/adoption">领养</a>
-            <a href="/recommend">送养</a>
-            <a href="/review">闲逛</a>
-            <a href="/home">我的</a>
+            </div>
+            <div class="ui blue basic button" style=" margin-right:10px;margin-left: 10px">
+                <a href="/giveaway">送养</a>
+            </div>
+
+            <div class="ui yellow basic button" style=" margin-right:10px;margin-left: 10px">
+                <a href="/wander">闲逛</a>
+            </div>
+            <div class="ui green basic button" style=" margin-right:10px;margin-left: 10px">
+                <a href="/home">我的</a>
+            </div>
+
         </div>
     </div>
 
