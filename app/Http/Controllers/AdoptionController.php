@@ -13,8 +13,15 @@ class AdoptionController extends Controller {
         foreach ($adoptions as $adoption) {
             $img = \App\AdoptionImage::where('adoption_id', $adoption->id)->get();
             $adoption['img'] = $img[0]['filename'];
-            }
+        }
         return view('adoption.index')->withAdoptions($adoptions);
+    }
+
+    public function show($id) {
+        $adoption = \App\Adoption::find($id);
+        $img = \App\AdoptionImage::where('adoption_id', $adoption->id)->get();
+        $adoption['img'] = $img[0]['filename'];
+        return view('adoption.show')->withAdoption($adoption);
     }
 
     public function create() {

@@ -48,34 +48,50 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default" style="min-width: 750px">
-                    <div class="panel-heading">Waiting for you . </div>
+                    <div class="panel-heading">Will you keep me ?</div>
                     <br>
 
                     <div class="ui items" style="padding: 10px">
 
-                        @foreach ($adoptions as $adoption)
-                        <div class="item" onclick="location.href='{{url('adoption/'.$adoption->id)}}'">
-                            <div class="image">
-                                <img src="/images/{{$adoption->img}}">
-                            </div>
-                            <div class="content">
+                        <div class="item" style="box-shadow: none !important;"
+                             onclick="location.href='{{url('adoption/'.$adoption->id)}}'">
+                            <div class="content" style="margin-left: 0">
+
+                                <div class="image">
+                                    <img src="/images/{{$adoption->img}}" style="width:400px">
+                                </div>
                                 <br>
                                 <a class="header">{{$adoption->title}}</a>
-                                <div class="meta">
-                                    <span>Description</span>
-                                </div>
                                 <div class="description">
                                     <p>category : {{$adoption->category}} </p>
                                     <p>location : {{$adoption->location}}</p>
                                     <p>updated : {{date('Y-m-d',strtotime($adoption->updated_at))}}</p>
 
                                 </div>
-                                <div class="extra">
-                                    Additional Details
-                                </div>
+
                             </div>
+
+
                         </div>
-                        @endforeach
+
+                        <h4 class="ui horizontal divider header">
+
+                            <i class="tag icon"></i>
+                            Description
+                        </h4>
+                        <div class="content" style="margin-left: 0">
+
+                            <br>
+                            <div class="description">
+                                <p>brief : {{$adoption->detail}}</p>
+                                <p>vaccination : {{$adoption->vaccination}} </p>
+                                <p>requirement : {{$adoption->requirement}}</p>
+                                <br>
+
+                                <div class="ui button basic" onclick="location.href='{{url('get/'.$adoption->id)}}'">I'd like to keep it</div>
+                            </div>
+
+                        </div>
 
                         <br>
 
@@ -87,6 +103,3 @@
 
 
     <!-- Scripts -->
-
-</body>
-</html>
