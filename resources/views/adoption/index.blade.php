@@ -52,45 +52,29 @@
                     <br>
 
                     <div class="ui items" style="padding: 10px">
-                        <div class="item ">
-                            <div class="image">
-                                <img src="/images/cat1.jpg">
-                            </div>
-                            <div class="content">
-                                <a class="header">Find him a home ! =w=</a>
-                                <div class="meta">
-                                    <span>Description</span>
-                                </div>
-                                <div class="description">
-                                    <p>category : who knows </p>
-                                    <p>age : 2 month</p>
-                                    <p>location : 西安子科技大学（南校区）</p>
-                                </div>
-                                <div class="extra">
-                                    Additional Details
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="item ">
+                        @foreach ($adoptions as $adoption)
+                        <div class="item" onclick="location.href='{{url('adoption/'.$adoption->id)}}'">
                             <div class="image">
-                                <img src="/images/cat2.jpg">
+                                <img src="/images/{{$adoption->img}}">
                             </div>
                             <div class="content">
-                                <a class="header"> 珍爱生命，远离毒品</a>
+                                <a class="header">{{$adoption->title}}</a>
                                 <div class="meta">
                                     <span>Description</span>
                                 </div>
                                 <div class="description">
-                                    <p>category : 喵喵喵 </p>
-                                    <p>age : 3 months</p>
-                                    <p>location : 西安子科技大学（北校区）</p>
+                                    <p>category : {{$adoption->category}} </p>
+                                    <p>location : {{$adoption->location}}</p>
+                                    <p>updated : {{date('Y-m-d',strtotime($adoption->updated_at))}}</p>
+
                                 </div>
                                 <div class="extra">
                                     Additional Details
                                 </div>
                             </div>
                         </div>
+                        @endforeach
 
                         <br>
 

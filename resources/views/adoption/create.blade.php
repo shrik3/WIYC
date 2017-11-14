@@ -60,7 +60,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ url('admin/book') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('giveaway') }}" method="POST" enctype="multipart/form-data">
                             {!! csrf_field() !!}
                             <input type="text" name="title" class="form-control" required="required"
                                    placeholder="标题">

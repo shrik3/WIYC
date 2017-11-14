@@ -50,6 +50,7 @@ Route::group(['middleware'=>'auth','namespace'=>'User','prefix'=>'my'],function(
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/giveaway','AdoptionController@create');
+    Route::post('/giveaway','AdoptionController@store');
     Route::get('comment/new/{id}','CommentController@new');
     Route::post('comment/new/{id}','CommentController@store');
 });
