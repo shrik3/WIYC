@@ -31,19 +31,34 @@
 <body>
 
 <div class="ui sidebar inverted vertical menu">
-    <a class="item">
-        1
-    </a>
-    <a class="item">
-        2
-    </a>
-    <a class="item">
-        3
-    </a>
+    <div class="image">
+        <img src="/images/icon.jpg" style="width: 100%;">
+    </div>
+    <br>
+    <a class="item" href="{{url('userinfo')}}">
+        我的信息
+        <br>
+        <a class="item" href="{{url('adoption')}}">
+            我要领养
+        </a>
+        <a class="item" href="{{url('giveaway')}}">
+            我要送养
+        </a>
+        <br>
+        <a class="item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+            退出登陆
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+              style="display: none;">
+            {{ csrf_field() }}
+        </form>
 </div>
 
 <div class="pusher theme_bgc" style="background:#ebe8db">
-    <div class="ui button" onclick="toggle()"><i class="sidebar icon"> </i>></div>
+    <div class="ui button" onclick="toggle()" style="position: fixed !important;top: 0;"><i class="sidebar icon " > </i>></div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">

@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('user_name');
             $table->string('title');
             $table->text('content');
-            $table->string('adoption_id');
+            $table->string('sISBN');
             $table->timestamps();
         });
     }

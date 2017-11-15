@@ -21,7 +21,7 @@ class AdoptionController extends Controller {
         $adoption = \App\Adoption::find($id);
         $img = \App\AdoptionImage::where('adoption_id', $adoption->id)->get();
         $adoption['img'] = $img[0]['filename'];
-        return view('adoption.show')->withAdoption($adoption);
+        return view('adoption.show')->withAdoption($adoption)->withComments(\App\Comment::where('adoption_id',$adoption->id)->orderby('id','DESC')->get());
     }
 
     public function create() {
