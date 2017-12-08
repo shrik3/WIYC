@@ -53,4 +53,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/giveaway','AdoptionController@store');
     Route::get('comment/new/{id}','CommentController@new');
     Route::post('comment/new/{id}','CommentController@store');
+    Route::get('/userinfo','User\ProfileController@info');
+    Route::post('editinfo','User\ProfileController@edit');
 });
